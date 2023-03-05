@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /*### Primary*/
+
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+    /*### Neutral*/
+
+    --PaleBlue: hsl(243, 100%, 93%);
+    --GrayishBlue: hsl(229, 7%, 55%);
+    --DarkBlue: hsl(228, 56%, 26%);
+    --VeryDarkBlue: hsl(229, 57%, 11%);
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background-image: url(./images/bg-desktop.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-color: var(--VeryDarkBlue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    position: absolute;
+    transform: translateY(-20%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.card1 {
+    background-color: var(--DarkBlue);
+    padding: 50px;
+    margin-right: 50px;
+    border-radius: 10px 40% 10px 10px;
+    width: 25%;
+}
+
+.card1 .one img {
+    width: 150px;
+    max-width: 100%;
+}
+
+.two {
+    margin-top: 2rem;
+}
+
+.two img {
+    background-color: var(--VeryDarkBlue);
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+/*-------------------------------*/
+.card2 {
+    background-color: var(--DarkBlue);
+    width: 40%;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 50px;
+    color: white;
+    padding: 50px;
+    z-index: 2;
+}
+
+.color {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--VeryDarkBlue);
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.box {
+    position: absolute;
+    background-color: whitesmoke;
+    width: 200px;
+    color: black;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    transform: translate(-10%, -70%);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    border: 30px solid;
+    right: 0;
+    bottom: -30px;
+    border-color: transparent whitesmoke transparent transparent;
+}
+
+.box span {
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-right: 5px;
+}
+
+.info {
+    color: var(--PaleBlue);
+}
+
+.info span {
+    color: whitesmoke;
+    font-weight: 700;
+}
+
+.used {
+    position: relative;
+    width: 70%;
+    height: 18px;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.circle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    top: 1px;
+    right: 2px;
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--PaleBlue);
+}
+
+/*-----------------*/
+@media(max-width:720px) {
+    body {
+        background-image: url(./images/bg-mobile.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card1 {
+        width: 90%;
+        margin-right: 0;
+    }
+
+    .card2 {
+        width: 90%;
+    }
+    .box{
+        position: absolute;
+        top:0;
+        transform: translate(-60%,10rem);
+    }
+    .box::after{
+        display: none;
+    }
+}
